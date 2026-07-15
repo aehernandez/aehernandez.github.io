@@ -426,9 +426,9 @@
                     C:\\USER\\GUEST> DIR *.EXE
                 </div>
                 <div style="display: flex; flex-direction: column; align-items: flex-start; font-size: 35px; font-weight: bold;">
-                    <a class="crt-link" data-target="resume">RESUME.EXE   &lt;DIR&gt;</a>
-                    <a class="crt-link" data-target="portfolio">PORTFOLIO.EXE&lt;DIR&gt;</a>
-                    <a class="crt-link" data-target="projects">PROJECTS.DAT &lt;DIR&gt;</a>
+                    <a class="crt-link" data-target="linkedin">LINKEDIN.EXE &lt;DIR&gt;</a>
+                    <a class="crt-link" data-target="emotion">EMOTION_WHEEL.EXE &lt;DIR&gt;</a>
+                    <a class="crt-link" data-target="projects">COMING_SOON.DAT &lt;DIR&gt;</a>
                 </div>
             </div>
         `;
@@ -439,13 +439,17 @@
                 e.preventDefault();
                 const t = link.getAttribute('data-target');
 
-                if (t === 'resume') {
-                    window.open('aehernandez_resume_2026.pdf', '_blank');
+                if (t === 'linkedin') {
+                    window.open('https://www.linkedin.com/in/alainehernandez/', '_blank');
+                    return;
+                }
+
+                if (t === 'emotion') {
+                    window.open('./emotion-wheel', '_blank');
                     return;
                 }
 
                 let c = "";
-                if (t === 'portfolio') c = "> INITIALIZING VGA GRAPHICS ENGINE\n> LOADING VISUAL ASSETS INTO VRAM...\n\n[ WARNING ] High artistic fidelity detected.";
                 if (t === 'projects') c = "> MOUNTING NETWORK DRIVE Z:\n> COMPILING REPOSITORIES...\n\n[ SUCCESS ] 0 Errors, 0 Warnings.";
                 showMessage(t, c);
             });
